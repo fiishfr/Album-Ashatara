@@ -110,7 +110,7 @@ function updateGrid() {
             data-desc="${item.category || item.class || item.role}">;
            
             <img src="${item.image.replace(/\\/g, '/')}" alt="image" loading=lazy decoding=async>
-           console.log(item.image);
+           
             <div class="card-content">
                 <span class="card-tag">${item.category || item.class || item.role}</span>
                 <h4>${item.title || item.name}</h4>
