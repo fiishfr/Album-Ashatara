@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashatara 2026 | Digital Album</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+               <div class="logo-box">
+                <img src="logo.png" alt="Logo Sekolah" style="width: 100%; height: 100%; border-radius: 12px; object-fit: cover;"></div>
+                <div class="logo-text">
+                    <span>ASHATARA '26</span>
+                    <small>Digital Album</small>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-item active" data-page="home"><i class="ph ph-house"></i> <span>Home</span></a></li>
+                <li><a href="#" class="nav-item" data-page="activities"><i class="ph ph-image"></i> <span>Momen</span></a></li>
+                <li><a href="#" class="nav-item" data-page="students"><i class="ph ph-users-three"></i> <span>Siswa</span></a></li>
+                <li><a href="#" class="nav-item" data-page="teachers"><i class="ph ph-user-focus"></i> <span>Guru</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="page active">
+        <div class="hero-section">
+            <div class="hero-badge">Angkatan XVI</div>
+            <h1><span class="gradient-text">Ashatara '26 </span>Digital Album</h1>
+            <p>Satu Harapan, Satu Ashatara.</p>
+            <div class="hero-btns">
+                <button onclick="changePage('activities')" class="btn-primary">Lihat Momen</button>
+                <button onclick="changePage('students')" class="btn-secondary">Cari Teman</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="content-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2 id="page-title">Galeri Kegiatan</h2>
+                <div class="header-actions">
+                    <button id="uploadBtn" class="upload-btn">
+                                <i class="ph ph-upload-simple"></i>
+                                Upload Foto
+                    </button>
+
+                    <div class="search-bar">
+                        <i class="ph ph-magnifying-glass"></i>
+                        <input type="text" id="main-search" placeholder="Cari sesuatu...">
+                        <button type="button" id="clearBtn" class="clear-btn">✕</button>  
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-container" id="filter-container">
+                </div>
+                
+            <div class="main-grid" id="main-grid">
+                </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img"  src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lb-title"></h3>
+                <p id="lb-desc"></p>
+            </div>
+        </div>
+    </div>
+    
+<div id="uploadModal" class="upload-modal">
+
+    <div class="upload-box">
+
+        <span id="closeUploadModal">&times;</span>
+
+        <h3>Upload Foto Baru</h3>
+
+        <input
+            type="text"
+            id="photoTitle"
+            placeholder="Masukkan Judul Foto"
+        >
+        <img id="previewImage" class="preview-image hidden" />
+        <select id="photoCategory">
+            <option value="angkatan">Angkatan</option>
+            <option value="kelas">Kelas</option>
+            <option value="mpls">MPLS</option>
+            <option value="pta">PTA</option>
+            <option value="gtc">GTC</option>
+            <option value="kemah">Kemah Blok</option>
+            <option value="smaitfair">SMAIT Fair</option>
+        </select>
+
+        <input
+            type="file"
+            id="photoUpload"
+            accept="image/*"
+        >
+
+        <button id="submitUpload">
+            Upload Sekarang
+        </button>
+        
+    </div>
+    <div id="uploadLoading" class="upload-loading hidden">
+                Uploading...
+            </div>
+</div>
+<div id="toast" class="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="script.js"></script>
+</body>
+<footer class="footer">
+    <p>© 2026 Album Ashatara. All Rights Reserved.</p>
+</footer>
+</html>
