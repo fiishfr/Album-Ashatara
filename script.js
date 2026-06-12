@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = window.location.origin;
 // Database Aplikasi
 let database = {
     activities: [],
@@ -109,8 +109,8 @@ function updateGrid() {
             data-title="${item.title || item.name}"
             data-desc="${item.category || item.class || item.role}">;
            
-            <img src="${API_URL}/${item.image}" alt="image" loading="lazy" decoding="async">
-           
+            <img src="${item.image.replace(/\\/g, '/')}" alt="image" loading=lazy decoding=async>
+           console.log(item.image);
             <div class="card-content">
                 <span class="card-tag">${item.category || item.class || item.role}</span>
                 <h4>${item.title || item.name}</h4>

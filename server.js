@@ -20,6 +20,7 @@ app.use(
 app.use(express.static(__dirname));
 app.use("/api", require("./routes/data"));
 app.use("/api/upload", require("./routes/upload"));
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
